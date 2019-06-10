@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export default class MovieList extends Component {
       <div className="movie-list">
         {
           this.state.movies.map(movie => (
-            <Link to={`/movies/${movie.id}`}>
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
               <MovieDetails key={movie.id} movie={movie} />
             </Link>   
           ))
